@@ -36,8 +36,10 @@ class RubyErrTest
       error = nil
     when "capture3"
       output, error, result = Open3.capture3("bash", script, input)
-    when "capture3_with_log"
+    when "capture3_with_log_as_one_command"
       output, error, result = Open3.capture3("bash #{script} #{input} > >(tee -a #{output_log}) 2> >(tee -a #{error_log} >&2)")
+    when "capture3_with_log_as_arguments"
+      output, error, result = Open3.capture3("bash", script, input, "> >(tee -a #{output_log}) 2> >(tee -a #{error_log} >&2)")
     end
     puts "Ruby result: #{result.inspect}"
     puts "Ruby output: #{output.inspect}"
@@ -77,4 +79,5 @@ RubyErrTest.run_success_and_error_for("sh_with_redirected_stderr")
 RubyErrTest.run_success_and_error_for("sh_with_log")
 RubyErrTest.run_success_and_error_for("bash_with_log")
 RubyErrTest.run_success_and_error_for("capture3")
-RubyErrTest.run_success_and_error_for("capture3_with_log")
+RubyErrTest.run_success_and_error_for("capture3_with_log_as_one_command")
+RubyErrTest.run_success_and_error_for("capture3_with_log_as_arguments")

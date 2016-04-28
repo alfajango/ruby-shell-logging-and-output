@@ -1,104 +1,118 @@
 Ruby running input "success" with bash
-This is running with input: "success"...
-Success!
-Ruby result: #<Process::Status: pid 54194 exit 0>
+Script stdout: Running with input "success"...
+Script stdout: Success!
+Ruby result: #<Process::Status: pid 56454 exit 0>
 Ruby output: true
 Ruby error: nil
 Output log: ""
 Error log: ""
 - - - - - - - - - - - - - - - - - - - - - - - - - 
 Ruby running input "fail" with bash
-This is running with input: "fail"...
-Ruby result: #<Process::Status: pid 54195 exit 1>
+Script stdout: Running with input "fail"...
+Ruby result: #<Process::Status: pid 56455 exit 1>
 Ruby output: false
 Ruby error: nil
 Output log: ""
 Error log: ""
 ==================================================
 Ruby running input "success" with sh
-Ruby result: #<Process::Status: pid 54196 exit 0>
-Ruby output: "This is running with input: \"success\"...\nSuccess!\n"
+Ruby result: #<Process::Status: pid 56456 exit 0>
+Ruby output: "Script stdout: Running with input \"success\"...\nScript stdout: Success!\n"
 Ruby error: nil
 Output log: ""
 Error log: ""
 - - - - - - - - - - - - - - - - - - - - - - - - - 
 Ruby running input "fail" with sh
-Ruby result: #<Process::Status: pid 54197 exit 1>
-Ruby output: "This is running with input: \"fail\"...\n"
+Ruby result: #<Process::Status: pid 56457 exit 1>
+Ruby output: "Script stdout: Running with input \"fail\"...\n"
 Ruby error: nil
 Output log: ""
 Error log: ""
 ==================================================
 Ruby running input "success" with sh_with_redirected_stderr
-Ruby result: #<Process::Status: pid 54198 exit 0>
-Ruby output: "This is running with input: \"success\"...\nSuccess!\n"
+Ruby result: #<Process::Status: pid 56458 exit 0>
+Ruby output: "Script stdout: Running with input \"success\"...\nScript stdout: Success!\n"
 Ruby error: nil
 Output log: ""
 Error log: ""
 - - - - - - - - - - - - - - - - - - - - - - - - - 
 Ruby running input "fail" with sh_with_redirected_stderr
-Ruby result: #<Process::Status: pid 54200 exit 1>
-Ruby output: "This is running with input: \"fail\"...\nFail!\n"
+Ruby result: #<Process::Status: pid 56460 exit 1>
+Ruby output: "Script stdout: Running with input \"fail\"...\nScript stderr: Fail!\n"
 Ruby error: nil
 Output log: ""
 Error log: ""
 ==================================================
 Ruby running input "success" with sh_with_log
-Ruby result: #<Process::Status: pid 54202 exit 2>
+Ruby result: #<Process::Status: pid 56462 exit 2>
 Ruby output: ""
 Ruby error: nil
 Output log: ""
 Error log: ""
 - - - - - - - - - - - - - - - - - - - - - - - - - 
 Ruby running input "fail" with sh_with_log
-Ruby result: #<Process::Status: pid 54203 exit 2>
+Ruby result: #<Process::Status: pid 56463 exit 2>
 Ruby output: ""
 Ruby error: nil
 Output log: ""
 Error log: ""
 ==================================================
 Ruby running input "success" with bash_with_log
-This is running with input: "success"...
-Success!
-Ruby result: #<Process::Status: pid 54204 exit 0>
+Script stdout: Running with input "success"...
+Script stdout: Success!
+Ruby result: #<Process::Status: pid 56464 exit 0>
 Ruby output: true
 Ruby error: nil
-Output log: "This is running with input: \"success\"...\nSuccess!\n"
+Output log: "Script stdout: Running with input \"success\"...\nScript stdout: Success!\n"
 Error log: ""
 - - - - - - - - - - - - - - - - - - - - - - - - - 
 Ruby running input "fail" with bash_with_log
-This is running with input: "fail"...
-Ruby result: #<Process::Status: pid 54210 exit 1>
+Script stdout: Running with input "fail"...
+Ruby result: #<Process::Status: pid 56470 exit 1>
 Ruby output: false
 Ruby error: nil
-Output log: "This is running with input: \"fail\"...\n"
-Error log: "Fail!\n"
+Output log: "Script stdout: Running with input \"fail\"...\n"
+Error log: "Script stderr: Fail!\n"
 ==================================================
 Ruby running input "success" with capture3
-Ruby result: #<Process::Status: pid 54216 exit 0>
-Ruby output: "This is running with input: \"success\"...\nSuccess!\n"
+Ruby result: #<Process::Status: pid 56476 exit 0>
+Ruby output: "Script stdout: Running with input \"success\"...\nScript stdout: Success!\n"
 Ruby error: ""
 Output log: ""
 Error log: ""
 - - - - - - - - - - - - - - - - - - - - - - - - - 
 Ruby running input "fail" with capture3
-Ruby result: #<Process::Status: pid 54217 exit 1>
-Ruby output: "This is running with input: \"fail\"...\n"
-Ruby error: "Fail!\n"
+Ruby result: #<Process::Status: pid 56477 exit 1>
+Ruby output: "Script stdout: Running with input \"fail\"...\n"
+Ruby error: "Script stderr: Fail!\n"
 Output log: ""
 Error log: ""
 ==================================================
-Ruby running input "success" with capture3_with_log
-Ruby result: #<Process::Status: pid 54218 exit 2>
+Ruby running input "success" with capture3_with_log_as_one_command
+Ruby result: #<Process::Status: pid 56478 exit 2>
 Ruby output: ""
 Ruby error: "sh: -c: line 0: syntax error near unexpected token `>'\nsh: -c: line 0: `bash /Users/steveschwartz/OS/ruby_shell_logging_and_output/err_test.sh success > >(tee -a /Users/steveschwartz/OS/ruby_shell_logging_and_output/err_test.log) 2> >(tee -a /Users/steveschwartz/OS/ruby_shell_logging_and_output/err_test.err.log >&2)'\n"
 Output log: ""
 Error log: ""
 - - - - - - - - - - - - - - - - - - - - - - - - - 
-Ruby running input "fail" with capture3_with_log
-Ruby result: #<Process::Status: pid 54219 exit 2>
+Ruby running input "fail" with capture3_with_log_as_one_command
+Ruby result: #<Process::Status: pid 56479 exit 2>
 Ruby output: ""
 Ruby error: "sh: -c: line 0: syntax error near unexpected token `>'\nsh: -c: line 0: `bash /Users/steveschwartz/OS/ruby_shell_logging_and_output/err_test.sh fail > >(tee -a /Users/steveschwartz/OS/ruby_shell_logging_and_output/err_test.log) 2> >(tee -a /Users/steveschwartz/OS/ruby_shell_logging_and_output/err_test.err.log >&2)'\n"
+Output log: ""
+Error log: ""
+==================================================
+Ruby running input "success" with capture3_with_log_as_arguments
+Ruby result: #<Process::Status: pid 56480 exit 0>
+Ruby output: "Script stdout: Running with input \"success\"...\nScript stdout: Success!\n"
+Ruby error: ""
+Output log: ""
+Error log: ""
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+Ruby running input "fail" with capture3_with_log_as_arguments
+Ruby result: #<Process::Status: pid 56481 exit 1>
+Ruby output: "Script stdout: Running with input \"fail\"...\n"
+Ruby error: "Script stderr: Fail!\n"
 Output log: ""
 Error log: ""
 ==================================================

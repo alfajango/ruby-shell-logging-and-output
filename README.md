@@ -108,3 +108,20 @@ resources:
  * https://bugs.ruby-lang.org/issues/9082
  * http://coldattic.info/shvedsky/pro/blogs/a-foo-walks-into-a-bar/posts/63
  * http://illuminatedcomputing.com/posts/2011/10/piping-in-ruby-with-popen3/
+
+Another approach could be to use one of the above methods that just logs
+to files, and then uses a couple Ruby threads to read the stdout and
+stderr from those files into Ruby variables, similar to how this article
+demonstrates for watching growing files:
+
+ * http://rubyforadmins.com/reading-growing-files
+
+Or, we could do the opposite of the previous approach, and use one of
+the methods (such as `capture3`) which outputs stdout and stderr
+independently to Ruby and use Ruby to then write them to their
+respective log files. The disadvantage to this approach is that we only
+write to the log files once the operation is finished (so that we
+couldn't e.g. tail the logs to view ongoing progress of a long-running
+process), unless we use a lower level Ruby method such as `#popen3` to
+stream the results in real-time, but then we have those potential pipe
+overflow deadlock issues again.

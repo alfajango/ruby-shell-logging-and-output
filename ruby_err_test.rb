@@ -27,23 +27,23 @@ class RubyErrTest
       result = $?
       error = nil
     when "sh_with_log"
-      output = %x(bash #{script} #{input} > >(tee -a #{output_log}) 2> >(tee -a #{err_log} >&2))
+      output = %x(bash #{script} #{input} > >(tee -a #{output_log}) 2> >(tee -a #{error_log} >&2))
       result = $?
       error = nil
     when "bash_with_log"
-      output = bash( "bash #{script} #{input} > >(tee -a #{output_log}) 2> >(tee -a #{err_log} >&2)" )
+      output = bash( "bash #{script} #{input} > >(tee -a #{output_log}) 2> >(tee -a #{error_log} >&2)" )
       result = $?
       error = nil
     when "capture3"
       output, error, result = Open3.capture3("bash", script, input)
     when "capture3_with_log"
-      output, error, result = Open3.capture3("bash #{script} #{input} > >(tee -a #{output_log}) 2> >(tee -a #{err_log} >&2)")
+      output, error, result = Open3.capture3("bash #{script} #{input} > >(tee -a #{output_log}) 2> >(tee -a #{error_log} >&2)")
     end
     puts "Ruby result: #{result.inspect}"
     puts "Ruby output: #{output.inspect}"
     puts "Ruby error: #{error.inspect}"
     puts "Output log: #{IO.read(output_log).inspect}"
-    puts "Err log: #{IO.read(err_log).inspect}"
+    puts "Error log: #{IO.read(error_log).inspect}"
   end
 
   def bash(command)
@@ -62,12 +62,12 @@ class RubyErrTest
     File.join(directory, "err_test.sh")
   end
 
-  def err_log
+  def error_log
     File.join(directory, "err_test.err.log")
   end
 
   def clear_logs
-    [output_log, err_log].each { |f| File.truncate(f, 0) }
+    [output_log, error_log].each { |f| File.truncate(f, 0) }
   end
 end
 

@@ -1,0 +1,104 @@
+Ruby running input "success" with bash
+This is running with input: "success"...
+Success!
+Ruby result: #<Process::Status: pid 54194 exit 0>
+Ruby output: true
+Ruby error: nil
+Output log: ""
+Error log: ""
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+Ruby running input "fail" with bash
+This is running with input: "fail"...
+Ruby result: #<Process::Status: pid 54195 exit 1>
+Ruby output: false
+Ruby error: nil
+Output log: ""
+Error log: ""
+==================================================
+Ruby running input "success" with sh
+Ruby result: #<Process::Status: pid 54196 exit 0>
+Ruby output: "This is running with input: \"success\"...\nSuccess!\n"
+Ruby error: nil
+Output log: ""
+Error log: ""
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+Ruby running input "fail" with sh
+Ruby result: #<Process::Status: pid 54197 exit 1>
+Ruby output: "This is running with input: \"fail\"...\n"
+Ruby error: nil
+Output log: ""
+Error log: ""
+==================================================
+Ruby running input "success" with sh_with_redirected_stderr
+Ruby result: #<Process::Status: pid 54198 exit 0>
+Ruby output: "This is running with input: \"success\"...\nSuccess!\n"
+Ruby error: nil
+Output log: ""
+Error log: ""
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+Ruby running input "fail" with sh_with_redirected_stderr
+Ruby result: #<Process::Status: pid 54200 exit 1>
+Ruby output: "This is running with input: \"fail\"...\nFail!\n"
+Ruby error: nil
+Output log: ""
+Error log: ""
+==================================================
+Ruby running input "success" with sh_with_log
+Ruby result: #<Process::Status: pid 54202 exit 2>
+Ruby output: ""
+Ruby error: nil
+Output log: ""
+Error log: ""
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+Ruby running input "fail" with sh_with_log
+Ruby result: #<Process::Status: pid 54203 exit 2>
+Ruby output: ""
+Ruby error: nil
+Output log: ""
+Error log: ""
+==================================================
+Ruby running input "success" with bash_with_log
+This is running with input: "success"...
+Success!
+Ruby result: #<Process::Status: pid 54204 exit 0>
+Ruby output: true
+Ruby error: nil
+Output log: "This is running with input: \"success\"...\nSuccess!\n"
+Error log: ""
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+Ruby running input "fail" with bash_with_log
+This is running with input: "fail"...
+Ruby result: #<Process::Status: pid 54210 exit 1>
+Ruby output: false
+Ruby error: nil
+Output log: "This is running with input: \"fail\"...\n"
+Error log: "Fail!\n"
+==================================================
+Ruby running input "success" with capture3
+Ruby result: #<Process::Status: pid 54216 exit 0>
+Ruby output: "This is running with input: \"success\"...\nSuccess!\n"
+Ruby error: ""
+Output log: ""
+Error log: ""
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+Ruby running input "fail" with capture3
+Ruby result: #<Process::Status: pid 54217 exit 1>
+Ruby output: "This is running with input: \"fail\"...\n"
+Ruby error: "Fail!\n"
+Output log: ""
+Error log: ""
+==================================================
+Ruby running input "success" with capture3_with_log
+Ruby result: #<Process::Status: pid 54218 exit 2>
+Ruby output: ""
+Ruby error: "sh: -c: line 0: syntax error near unexpected token `>'\nsh: -c: line 0: `bash /Users/steveschwartz/OS/ruby_shell_logging_and_output/err_test.sh success > >(tee -a /Users/steveschwartz/OS/ruby_shell_logging_and_output/err_test.log) 2> >(tee -a /Users/steveschwartz/OS/ruby_shell_logging_and_output/err_test.err.log >&2)'\n"
+Output log: ""
+Error log: ""
+- - - - - - - - - - - - - - - - - - - - - - - - - 
+Ruby running input "fail" with capture3_with_log
+Ruby result: #<Process::Status: pid 54219 exit 2>
+Ruby output: ""
+Ruby error: "sh: -c: line 0: syntax error near unexpected token `>'\nsh: -c: line 0: `bash /Users/steveschwartz/OS/ruby_shell_logging_and_output/err_test.sh fail > >(tee -a /Users/steveschwartz/OS/ruby_shell_logging_and_output/err_test.log) 2> >(tee -a /Users/steveschwartz/OS/ruby_shell_logging_and_output/err_test.err.log >&2)'\n"
+Output log: ""
+Error log: ""
+==================================================

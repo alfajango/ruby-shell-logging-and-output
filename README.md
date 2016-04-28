@@ -17,6 +17,11 @@ Ideally, we'd like to see stdout as Ruby output, stderr as Ruby error,
 and exit status as Ruby result, while also seeing stdout in the
 err_test.log and stderr in the err_test.err.log.
 
+## Sample Output
+
+To see the resulting output without having to download and run this
+project, see [sample_output.txt](sample_output.txt).
+
 ## Some of the issues encountered
 
 This method redirects stderr to stdout so that we can capture both

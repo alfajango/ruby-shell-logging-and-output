@@ -10,7 +10,7 @@ stderr).
 To view output, run ruby script which calls err_test.sh:
 
 ```
-ruby ruby_err_test.rb
+ruby err_test.rb
 ```
 
 Ideally, we'd like to see stdout as Ruby output, stderr as Ruby error,
@@ -20,7 +20,7 @@ err_test.log and stderr in the err_test.err.log.
 ## Sample Output
 
 To see the resulting output without having to download and run this
-project, see [sample_output.txt](sample_output.txt).
+project, see [err_test_output.txt](err_test_output.txt).
 
 ## Some of the issues encountered
 

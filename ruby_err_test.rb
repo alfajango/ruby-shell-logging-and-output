@@ -5,10 +5,10 @@ class RubyErrTest
     ret = self.new
     ret.clear_logs
     ret.run_err(with: with)
-    puts "-"*20
+    puts "- "*25
     ret.clear_logs
     ret.run_err(input: "fail", with: with)
-    puts "-"*50
+    puts "="*50
   end
 
   def run_err(input:"success", with:"bash")
